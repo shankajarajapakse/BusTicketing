@@ -1,0 +1,3 @@
+operator_homepage:
+    path:     /
+    defaults: { _controller: OperatorBundle:Default:index }

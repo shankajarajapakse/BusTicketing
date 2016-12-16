@@ -1,3 +1,23 @@
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+operator:
+    resource: "@OperatorBundle/Resources/config/routing.yml"
+    prefix:   /
+
+customer:
+    resource: "@CustomerBundle/Resources/config/routing.yml"
+    prefix:   /
+
+register:
+    resource: "@RegisterBundle/Resources/config/routing.yml"
+    prefix:   /
+
+login:
+    resource: "@LoginBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

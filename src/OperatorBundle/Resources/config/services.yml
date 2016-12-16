@@ -1,0 +1,4 @@
+services:
+#    operator.example:
+#        class: OperatorBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
