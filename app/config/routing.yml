@@ -16,7 +16,7 @@ register:
 
 login:
     resource: "@LoginBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /login
 
 app:
     resource: "@AppBundle/Controller/"
