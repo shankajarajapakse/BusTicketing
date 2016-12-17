@@ -4,7 +4,7 @@ admin:
 
 operator:
     resource: "@OperatorBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /busoperator
 
 customer:
     resource: "@CustomerBundle/Resources/config/routing.yml"

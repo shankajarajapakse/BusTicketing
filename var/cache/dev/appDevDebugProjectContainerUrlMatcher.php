@@ -114,13 +114,21 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AdminBundle\\Controller\\DefaultController::indexAction',  '_route' => 'admin_homepage',);
         }
 
-        // operator_homepage
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'operator_homepage');
+        if (0 === strpos($pathinfo, '/busoperator')) {
+            // bus
+            if (rtrim($pathinfo, '/') === '/busoperator') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'bus');
+                }
+
+                return array (  '_controller' => 'OperatorBundle\\Controller\\BusController::indexAction',  '_route' => 'bus',);
             }
 
-            return array (  '_controller' => 'OperatorBundle\\Controller\\DefaultController::indexAction',  '_route' => 'operator_homepage',);
+            // bus_show
+            if (0 === strpos($pathinfo, '/busoperator/show') && preg_match('#^/busoperator/show/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'bus_show')), array (  '_controller' => 'OperatorBundle\\Controller\\BusController::showAction',));
+            }
+
         }
 
         // customer_homepage

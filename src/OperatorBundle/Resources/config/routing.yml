@@ -1,3 +1,7 @@
-operator_homepage:
+bus:
     path:     /
-    defaults: { _controller: OperatorBundle:Default:index }
+    defaults: { _controller: OperatorBundle:Bus:index }
+
+bus_show:
+    path:   /show/{id}
+    defaults: { _controller: OperatorBundle:Bus:show }
